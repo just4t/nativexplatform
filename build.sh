@@ -19,8 +19,7 @@ pushd release
 cp -Rf ../ExtractWizardGtk/macOS/Akeeba\ eXtract\ Wizard.app .
 cp ../ExtractWizardGtk/bin/Release/*.exe Akeeba\ eXtract\ Wizard.app/Contents/Resources/
 cp ../ExtractWizardGtk/bin/Release/*.dll Akeeba\ eXtract\ Wizard.app/Contents/Resources/
-cd Akeeba\ eXtract\ Wizard.app
-zip -r ../extract-wizard-macos-$AKPKGVERSION.zip *
+zip -r extract-wizard-macos-$AKPKGVERSION.zip Akeeba\ eXtract\ Wizard.app
 popd
 rm -rf release/Akeeba\ eXtract\ Wizard.app
 
