@@ -105,6 +105,9 @@ namespace Akeeba.Unarchiver
                 }
 
                 _archivePath = value;
+
+                // Finally, discover the parts of multipart archives
+                DiscoverParts();
             }
         }
 
@@ -383,7 +386,7 @@ namespace Akeeba.Unarchiver
                 _parts += 1;
                 partNumber += 1;
 
-                strNewFile = Path.ChangeExtension(_archivePath, strExtension.Substring(0, 1) + string.Format("{0:00}", partNumber));
+                strNewFile = Path.ChangeExtension(_archivePath, strExtension.Substring(0, 2) + string.Format("{0:00}", partNumber));
             } while (File.Exists(strNewFile));
         }
 
@@ -408,7 +411,7 @@ namespace Akeeba.Unarchiver
 
             string strExtension = Path.GetExtension(_archivePath) ?? "";
 
-            return Path.ChangeExtension(_archivePath, strExtension.Substring(0, 1) + string.Format("{0:00}", partNumber));
+            return Path.ChangeExtension(_archivePath, strExtension.Substring(0, 2) + string.Format("{0:00}", partNumber));
         }
 
         /// <summary>
