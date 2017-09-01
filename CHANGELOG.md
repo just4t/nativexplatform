@@ -1,5 +1,9 @@
 # 4.0.3
 
+**Miscellaneous changes**
+
+* New icons
+
 **Bug fixes**
 
 * Using multipart archives always results in an extraction error
