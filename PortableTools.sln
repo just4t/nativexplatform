@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "extractCLI", "extractCLI\extractCLI.csproj", "{A1787806-B40E-41E2-97D4-E08D79A52097}"
 EndProject
@@ -9,14 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unarchiver", "Unarchiver\Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractWizard", "ExtractWizard\ExtractWizard.csproj", "{CCC3DF7C-11F7-49ED-88BF-0D26C62F7D98}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ExtractWizardSetup", "ExtractWizardSetup\ExtractWizardSetup.wixproj", "{332C73C9-4C49-40C5-9F33-60CC09B28461}"
-EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AkeebaPortableToolsSetup", "AkeebaPortableToolsSetup\AkeebaPortableToolsSetup.wixproj", "{560BC63B-0920-4607-8E23-87A72CBFE4BE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractWizardGtk", "ExtractWizardGtk\ExtractWizardGtk.csproj", "{C49C8CC5-2572-427D-AFAF-3853C513A8FE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F8C19539-9779-4E56-8979-659485BC45EE} = {F8C19539-9779-4E56-8979-659485BC45EE}
 	EndProjectSection
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ExtractWizardSetup", "ExtractWizardSetup\ExtractWizardSetup.wixproj", "{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AkeebaPortableToolsSetup", "AkeebaPortableToolsSetup\AkeebaPortableToolsSetup.wixproj", "{9BE826D5-9C46-490F-869E-DA40067726A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,18 +51,6 @@ Global
 		{CCC3DF7C-11F7-49ED-88BF-0D26C62F7D98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCC3DF7C-11F7-49ED-88BF-0D26C62F7D98}.Release|x86.ActiveCfg = Release|Any CPU
 		{CCC3DF7C-11F7-49ED-88BF-0D26C62F7D98}.Release|x86.Build.0 = Release|Any CPU
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Debug|x86.ActiveCfg = Debug|x86
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Debug|x86.Build.0 = Debug|x86
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Release|Any CPU.ActiveCfg = Release|x86
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Release|x86.ActiveCfg = Release|x86
-		{332C73C9-4C49-40C5-9F33-60CC09B28461}.Release|x86.Build.0 = Release|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Debug|x86.ActiveCfg = Debug|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Debug|x86.Build.0 = Debug|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Release|Any CPU.ActiveCfg = Release|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Release|x86.ActiveCfg = Release|x86
-		{560BC63B-0920-4607-8E23-87A72CBFE4BE}.Release|x86.Build.0 = Release|x86
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -71,8 +59,23 @@ Global
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{C49C8CC5-2572-427D-AFAF-3853C513A8FE}.Release|x86.Build.0 = Release|Any CPU
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Debug|x86.ActiveCfg = Debug|x86
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Debug|x86.Build.0 = Debug|x86
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Release|Any CPU.ActiveCfg = Release|x86
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Release|x86.ActiveCfg = Release|x86
+		{6537BB5E-2CCD-499C-A7E6-89D7E5B1B9FC}.Release|x86.Build.0 = Release|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Debug|x86.ActiveCfg = Debug|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Debug|x86.Build.0 = Debug|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Release|Any CPU.ActiveCfg = Release|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Release|x86.ActiveCfg = Release|x86
+		{9BE826D5-9C46-490F-869E-DA40067726A2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38EB2481-EF6E-4DAD-9054-65A4FB347056}
 	EndGlobalSection
 EndGlobal
