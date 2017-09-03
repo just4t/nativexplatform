@@ -5,7 +5,7 @@
     Name="Akeeba Portable Tools"
     Version="4.0.3"
     Manufacturer="Akeeba Ltd"
-    IconSourceFile="..\ExtractWizard\Resources\extract-small.ico"
+    IconSourceFile="..\ExtractWizard\Resources\extract.ico"
     UpgradeCode="560bc63b-0920-4607-8e23-87a72cbfe4be">
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLargeLicense">
       <bal:WixStandardBootstrapperApplication
