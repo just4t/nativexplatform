@@ -29,6 +29,9 @@ then
 elif [ -f /usr/local/bin/mono ]
 then
         /usr/local/bin/mono "$DIR/../Resources/$ASSEMBLY"
-else
+elif [ -f `which mono` ]
+then
 	mono "$DIR/../Resources/$ASSEMBLY"
+else
+	osascript -e 'tell app "Akeeba eXtract Wizard" to display dialog "Akeeba eXtract Wizard requires Mono to be installed. Please read the documentation at https://github.com/akeeba/nativexplatform/wiki/Requirements"'
 fi
