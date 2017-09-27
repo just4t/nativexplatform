@@ -108,7 +108,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\extract-small.ico" />
     <Content Include="Resources\extract.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

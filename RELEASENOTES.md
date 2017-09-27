@@ -1,6 +1,6 @@
 # Release highlights
  
-**Critical bug extacting JPS archives**. Only empty, 0 byte files were being written to disk.
+**Could not process multipart archives**. Trying to extract a multipart archive would always result in an error.
 
 For more information and documentation please [consult the documentation Wiki](https://github.com/akeeba/nativexplatform/wiki).
  
@@ -28,14 +28,11 @@ There is also a command line (CLI) version which is available on the following p
 - `AkeebaPortableToolsSetup.exe` (Windows) - Just run the installer to install it
 - `extract-cli-macos-linux-*.zip` (Linux and macOS) - Extract to a folder and add it to your `$PATH` for quick access.
 
-# Tip
+# Performance Tip
 
-If you're on Windows you may want to disable your Antivirus or Windows Defender when extracting backup archives. The extraction will be much faster.
-
-Alternatively, you can set up a directory exception in Windows Defender / your antivirus: exclude the folder where you are extracting the backup archive to make the extraction faster. If you (also) exclude your local server's web root you'll see that your local Joomla!, WordPress, Drupal, Magento, PrestaShop, etc sites now run very fast.
-
-The reason is simple: antivirus software, like Windows Defender, will scan each and every file being accessed. While this is desirable for random files, it's not a good idea for local sites which need to access hundreds of files on every page load or for extracting a site which consists of several thousands of small files.
+If you're on Windows can set up a directory exception in Windows Defender / your antivirus: exclude the folder where you are extracting the backup archive to make the extraction run faster.
 
 # Changelog
 
-* Critical: Only empty files are created when extracting a JPS file
+* New icons
+* Using multipart archives always results in an extraction error

@@ -105,6 +105,9 @@ namespace Akeeba.Unarchiver
                 }
 
                 _archivePath = value;
+
+                // Finally, discover the parts of multipart archives
+                DiscoverParts();
             }
         }
 
@@ -383,7 +386,7 @@ namespace Akeeba.Unarchiver
                 _parts += 1;
                 partNumber += 1;
 
-                strNewFile = Path.ChangeExtension(_archivePath, strExtension.Substring(0, 1) + string.Format("{0:00}", partNumber));
+                strNewFile = Path.ChangeExtension(_archivePath, strExtension.Substring(0, 2) + string.Format("{0:00}", partNumber));
             } while (File.Exists(strNewFile));
         }
 
@@ -408,7 +411,7 @@ namespace Akeeba.Unarchiver
 
             string strExtension = Path.GetExtension(_archivePath) ?? "";
 
-            return Path.ChangeExtension(_archivePath, strExtension.Substring(0, 1) + string.Format("{0:00}", partNumber));
+            return Path.ChangeExtension(_archivePath, strExtension.Substring(0, 2) + string.Format("{0:00}", partNumber));
         }
 
         /// <summary>
@@ -630,13 +633,16 @@ namespace Akeeba.Unarchiver
                 source = InputStream;
             }
 
+            bool isSourceEqualToInputStream = source.Equals(InternalInputStream);
             byte[] buffer = new byte[len];
 
             int readLength = source.Read(buffer, 0, len);
 
             // Using a different source stream than the InputStream file source? Return whatever we read.
-            if (!source.Equals(InputStream))
+            if (!isSourceEqualToInputStream)
             {
+                Array.Resize(ref buffer, readLength);
+
                 return buffer;
             }
 
@@ -654,9 +660,14 @@ namespace Akeeba.Unarchiver
                 return buffer;
             }
 
-            // Proceed to next part
-            Close();
-            CurrentPartNumber++;
+            // Proceed to next part. Remember that the next call to ReadBytes below will
+            // implicitly call InputStream which picks up the fact that we are past EOF
+            // for the current part and will AUTOMATICALLY open the next part. We do not
+            // and MUST NOT increase the CurrentPartNumber here. If we do so manually we
+            // will be skipping over an entire part, causing the extraction to fail. That
+            // is, after part 1 is read (.j01) we will increase CurrentPartNumber to 2 but
+            // InputStream's getter will then increase it to 3, therefore it will try to
+            // read from the .j03 file, not the .j02 we are expecting! Ka-boom.
 
             // Read the rest of the data and return the combined result
             int remainingRead = len - readLength;
@@ -672,27 +683,28 @@ namespace Akeeba.Unarchiver
         /// <param name="len">Up to how many byte positions to skip forward.</param>
         protected void SkipBytes(long len)
         {
-            long bytesLeft = InputStream.Length - InputStream.Position;
+            long bytesLeft = 0;
+
+            try
+            {
+                bytesLeft = InputStream.Length - InputStream.Position;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                // We are here because we have already seeked past the EOF of the last part. We're done
+                return;
+            }
 
             // We have enough bytes left. Increase position and return.
-            if (bytesLeft > len)
+            if (bytesLeft >= len)
             {
                 InputStream.Position += len;
 
                 return;
             }
 
-            // We'll either go past EOF or directly on EOF. Close the file and advance the current part
-            Close();
-
-            // No more parts.
-            if (CurrentPartNumber == Parts)
-            {
-                return;
-            }
-
-            // If we were asked to seek at EOF we have already completed our assignment.
-            if (bytesLeft == len)
+            // If we have no more parts we were asked to skip past the end of the archive. We're done.
+            if (CurrentPartNumber >= Parts)
             {
                 return;
             }
