@@ -43,6 +43,9 @@ namespace Akeeba.extractCLI
 		[Option('s', "silent", Required = false, HelpText = "Encryption password, for JPS archives")]
 		public bool Silent { get; set; }
 
+		[Option('i', "ignore", Required = false, HelpText = "Ignore (most) file write errors")]
+		public bool IgnoreMostErrors { get; set; }
+
 		[Option('v', "verbose", Required = false, HelpText = "Enable verbose output, use when reporting issues")]
 		public bool Verbose { get; set; }
 

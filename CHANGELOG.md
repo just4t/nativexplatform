@@ -1,5 +1,9 @@
 # 4.0.4
 
+**New Features**
+
+* Option -i (--ignore) in eXtract CLI
+
 **Bug fixes**
 
 * Ignore Most Errors option didn't really do anything in eXtract Wizard

@@ -123,6 +123,11 @@ namespace Akeeba.extractCLI
 		                        writer = new DirectFileWriter(_options.TargetFolder);
 	                        }
 
+	                        if (_options.IgnoreMostErrors)
+	                        {
+		                        writer = new IgnoreFileWriter(_options.TargetFolder);
+	                        }
+
 	                        // Test the extraction
 	                        extractor.Extract(token, writer);
                         }, token,
