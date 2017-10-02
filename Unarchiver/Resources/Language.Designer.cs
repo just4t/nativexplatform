@@ -169,7 +169,7 @@ namespace Akeeba.Unarchiver.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown Extra Archive Header type.
+        ///   Looks up a localized string similar to Unknown Extra Archive Header type..
         /// </summary>
         internal static string ERR_FORMAT_JPS_EXTRAHEADER_UNKNOWN {
             get {
@@ -178,7 +178,7 @@ namespace Akeeba.Unarchiver.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrong length of Extra Archive Header.
+        ///   Looks up a localized string similar to Wrong length of Extra Archive Header..
         /// </summary>
         internal static string ERR_FORMAT_JPS_EXTRAHEADER_WRONGLENGTH {
             get {
@@ -201,6 +201,15 @@ namespace Akeeba.Unarchiver.Resources {
         internal static string ERR_FORMAT_JPS_INVALID_VERSION {
             get {
                 return ResourceManager.GetString("ERR_FORMAT_JPS_INVALID_VERSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only PBKDF2 with the SHA-1 algorithm is supported by Akeeba eXtract Wizard..
+        /// </summary>
+        internal static string ERR_FORMAT_JPS_PBKDF2_ALGO_NOT_SUPPORTED {
+            get {
+                return ResourceManager.GetString("ERR_FORMAT_JPS_PBKDF2_ALGO_NOT_SUPPORTED", resourceCulture);
             }
         }
         

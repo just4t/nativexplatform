@@ -286,14 +286,7 @@ namespace Akeeba.Unarchiver
         /// <param name="e">Event arguments</param>
         protected virtual void OnArchiveInformationEvent(ArchiveInformationEventArgs e)
         {
-            ArchiveInformationEventHandler handler = ArchiveInformationEvent;
-
-            // Event will be null if there are no subscribers
-            if (handler != null)
-            {
-                // Use the () operator to raise the event.
-                handler(this, e);
-            }
+            ArchiveInformationEvent?.Invoke(this, e);
         }
 
         /// <summary>
@@ -317,14 +310,7 @@ namespace Akeeba.Unarchiver
         /// <param name="e">Event arguments</param>
         protected virtual void OnEntityEvent(EntityEventArgs e)
         {
-            EntityEventHandler handler = EntityEvent;
-
-            // Event will be null if there are no subscribers
-            if (handler != null)
-            {
-                // Use the () operator to raise the event.
-                handler(this, e);
-            }
+            EntityEvent?.Invoke(this, e);
         }
 
         /// <summary>
@@ -348,14 +334,7 @@ namespace Akeeba.Unarchiver
         /// <param name="e">Event arguments</param>
         protected virtual void OnProgressEvent(ProgressEventArgs e)
         {
-            ProgressEventHandler handler = ProgressEvent;
-
-            // Event will be null if there are no subscribers
-            if (handler != null)
-            {
-                // Use the () operator to raise the event.
-                handler(this, e);
-            }
+            ProgressEvent?.Invoke(this, e);
         }
         #endregion
 

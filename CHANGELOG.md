@@ -1,3 +1,9 @@
+# 4.0.4
+
+**Bug fixes**
+
+* Ignore Most Errors option didn't really do anything in eXtract Wizard
+
 # 4.0.3
 
 **Miscellaneous changes**

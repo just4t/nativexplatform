@@ -268,8 +268,7 @@ namespace ExtractWizard.Controller
 
 							if (ignoreWriteErrors)
 							{
-								// TODO Use a different file writer when we are asked to ignore write errorss
-								writer = new DirectFileWriter(outputDirectory);
+								writer = new IgnoreFileWriter(outputDirectory);
 							}
 						}
 
@@ -319,7 +318,7 @@ namespace ExtractWizard.Controller
                     _gateway.SetTaskbarProgressState(TaskBarProgress.TaskbarStates.Error);
 
                     // Show error message
-					_gateway.showErrorMessage(_languageResource.GetString("LBL_ERROR_CAPTION"), e.Progress.LastException.Message);
+                    _gateway.showErrorMessage(_languageResource.GetString("LBL_ERROR_CAPTION"), e.Progress.LastException.Message);
                     break;
 
                 case ExtractionStatus.Running:
