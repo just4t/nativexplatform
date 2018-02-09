@@ -1,3 +1,9 @@
+# 4.0.5
+
+**Bug fixes**
+
+* Ignore Most Errors option still caused errors on Windows when the folder or file name included invalid characters
+
 # 4.0.4
 
 **New Features**
