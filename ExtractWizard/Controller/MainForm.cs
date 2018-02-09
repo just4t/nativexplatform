@@ -318,7 +318,8 @@ namespace ExtractWizard.Controller
                     _gateway.SetTaskbarProgressState(TaskBarProgress.TaskbarStates.Error);
 
                     // Show error message
-                    _gateway.showErrorMessage(_languageResource.GetString("LBL_ERROR_CAPTION"), e.Progress.LastException.Message);
+                    //_gateway.showErrorMessage(_languageResource.GetString("LBL_ERROR_CAPTION"), e.Progress.LastException.Message);
+                    _gateway.showErrorMessage(_languageResource.GetString("LBL_ERROR_CAPTION"), e.Progress.LastException.GetType().FullName + " - " + e.Progress.LastException.Message);
                     break;
 
                 case ExtractionStatus.Running:

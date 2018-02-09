@@ -112,6 +112,13 @@ namespace Akeeba.Unarchiver.DataWriter
             {
                 _outStream = null;
             }
+            // When the path is too long or there are invalid characters in the path .NET will raise an
+            // ArgumentException instead of an IOException. But that's *exactly* the kind of error we want to skip over
+            // on Windows.
+            catch (ArgumentException e)
+            {
+                _outStream = null;
+            }
         }
 
         /// <summary>

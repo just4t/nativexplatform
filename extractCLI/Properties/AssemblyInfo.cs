@@ -31,7 +31,7 @@ using CommandLine;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Akeeba Ltd")]
 [assembly: AssemblyProduct("Akeeba Backup Portable Tools")]
-[assembly: AssemblyCopyright("Copyright (c) 2006-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+[assembly: AssemblyCopyright("Copyright (c) 2006-2018 Nicholas K. Dionysopoulos / Akeeba Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
