@@ -9,7 +9,7 @@ rm -rf release
 mkdir release
 
 # Get the overall version from the Unarchiver project's assembly information
-AKPKGVERSION=`cat Unarchiver/Properties/AssemblyInfo.cs | grep "^\[assembly: AssemblyVersion(\"[^\"]*" --color=never -o | grep -o --color=never "\d.\d.\d"`
+AKPKGVERSION=`cat Unarchiver/Properties/AssemblyInfo.cs | grep "^\[assembly: AssemblyVersion(\"[^\"]*" --color=never -o | grep -o -P --color=never "\d.\d.\d"`
 
 # Akeeba eXtract Wizard for Linux
 zip -j release/extract-wizard-linux-$AKPKGVERSION.zip ExtractWizardGtk/bin/Release/*.exe ExtractWizardGtk/bin/Release/*.dll
