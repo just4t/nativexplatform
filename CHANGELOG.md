@@ -1,3 +1,9 @@
+# 4.0.6
+
+**Bug fixes**
+
+* Extracing multipart archives was unreliable, leaving files unextracted
+
 # 4.0.5
 
 **Bug fixes**

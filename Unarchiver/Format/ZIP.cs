@@ -270,7 +270,8 @@ namespace Akeeba.Unarchiver.Format
 
             for (int i = 1; i <= Parts; i++)
             {
-                FileInfo fi = new FileInfo(ArchivePath);
+                string thisFile = GetPartFilename(i);
+                FileInfo fi = new FileInfo(thisFile);
                 info.ArchiveSize += (ulong) fi.Length;
             }
 
