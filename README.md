@@ -1,32 +1,15 @@
-# Akeeba Portable Tools
+# Akeeba Portable Tools - DISCONTINUED
 
-Akeeba Backup and Akeeba Solo desktop tools.
+Akeeba Backup and Akeeba Solo desktop tools. NO LONGER MAINTAINED.
 
-This repository contains the desktop utilities which are meant to be used with Akeeba Backup / Akeeba Solo to make your
-life easier. All of our tools are now written in C#, targetting .NET Framework 4.5 / Mono 4.5. Graphical interfaces are
-built using WindowsForms for maximum cross-platform interoperability.
+This repository contains what used to be the desktop utilities which were meant to be used with Akeeba Backup / Akeeba Solo to make your life easier. All of these tools were rewritten in C#, targetting .NET Framework 4.5 / Mono 4.5. Graphical interfaces were built using WindowsForms for maximum cross-platform interoperability.
 
 ## License
 
 Please consult [the license file](LICENSE.md) in this repository.
 
-## Support for susbcribers only
+## DISCONTINUED NOVEMBER 2018
 
-Support for this software is only provided to subscribers of Akeeba Backup and Akeeba Solo and *only* through our site's
-Support section.
+Unfortunately, people seem to find it hard to read the requirements in the download page and install Mono, linked to from that page. Trying to educate them seems hopeless. Instead of following the simple instructions (download this, install it, done) they start debating the choice of programming language and other trivialities – yet they are unwilling to contribute anything beyond sheer negativity. In the end of the day this hinders me from developing the software that matters. I have no choice but to discontinue this fringe product that offers zero benefit to me and my company.
 
-Please note that Issues requesting support or for any other non-code reason in this repository will be closed without a
-response. This is necessary to keep things tidy. Thank you for your understanding.
-
-## Developers welcome
-
-The GitHub reposiory is meant for use by developers only. If you are a developer and have a code-related observation,
-suggestion or proposal you are welcome to submit an Issue or, better yet, a Pull Request with your code.
-
-The repository comes as a single Solution. You can open it with most .NET IDEs such as Visual Studio, Xamarin Studio,
-MonoDevelop or JetBrains Rider. Before trying to compile the solution please remember to install the NuGet packages.
-
-The projects in this solution are as follows:
-* **extractCLI** The command-line version of Akeeba eXtract
-* **ExtractWizard** The GUI, WindowsForms version of Akeeba eXtract Wizard
-* **Unarchiver** A library you can use to extract JPA, JPS and ZIP archives created with any Akeeba Backup version published since 2011.
+PS: Use Akeeba Kickstart. It's written in PHP. It works in a browser (browsers ARE cross platform!) and the CLI. How you set up a local web server or PHP is up to you; I can't and won't help you with that.
